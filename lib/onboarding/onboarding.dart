@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:task_one/image_model.dart';
-import 'package:task_one/onboarding_model.dart';
+import 'package:task_one/onboarding/image_model.dart';
+import 'package:task_one/onboarding/onboarding_model.dart';
+import 'package:task_one/sign_in/sign_in.dart';
 
 class OnBoarding extends StatelessWidget {
   OnBoarding({Key? key}) : super(key: key);
@@ -91,7 +92,15 @@ class OnBoarding extends StatelessWidget {
                             fontWeight: FontWeight.bold, fontSize: 15),
                       ),
                       TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (BuildContext context) =>
+                                    SignInScreen(),
+                              ),
+                            );
+                          },
                           child: const Text(
                             "Sign Up",
                             style: TextStyle(color: Colors.teal),
